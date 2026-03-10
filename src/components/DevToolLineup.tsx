@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { MINISTRIES } from "@/data/models";
-import { Music, Video, BookOpen, MicVocal, HeartHandshake, ListPlus, X } from "lucide-react";
+import { Music, Video, BookOpen, MicVocal, HeartHandshake, Moon, Sprout, HandHeart, HandHelping, ListPlus, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const IconMap = { Music, Video, BookOpen, MicVocal, HeartHandshake } as const;
+const IconMap = { Music, Video, BookOpen, MicVocal, HeartHandshake, Moon, Sprout, HandHeart, HandHelping } as const;
 
 export default function DevToolLineup() {
   const [isOpen, setIsOpen] = useState(false);
