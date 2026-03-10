@@ -5,18 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MINISTRIES, QUESTIONS } from "@/data/models";
 import {
   Music, Video, BookOpen, MicVocal, HeartHandshake,
+  Moon, Sprout, HandHeart, HandHelping,
   ArrowRight, RefreshCcw, Sparkles
 } from "lucide-react";
 
 type Scores = Record<string, number>;
 
-const IconMap = { Music, Video, BookOpen, MicVocal, HeartHandshake } as const;
+const IconMap = {
+  Music, Video, BookOpen, MicVocal, HeartHandshake,
+  Moon, Sprout, HandHeart, HandHelping,
+} as const;
 
 export default function MinistryTest() {
   const [started, setStarted] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [scores, setScores] = useState<Scores>({
-    WISHING: 0, SOTONG: 0, SAI: 0, BETHEL: 0, SPRING: 0,
+    WISHING: 0, SAI: 0, HADEUNG: 0, HARANG: 0,
+    MASAEM: 0, SOTONG: 0, NAU: 0, YEPUM: 0, BETHEL: 0,
   });
   const [showResult, setShowResult] = useState(false);
   const [resultId, setResultId] = useState<string | null>(null);
@@ -33,7 +38,7 @@ export default function MinistryTest() {
       setCurrentIdx(currentIdx + 1);
     } else {
       let maxScore = -1;
-      let best = "WISHING";
+      let best: string = "WISHING";
       for (const [key, value] of Object.entries(newScores)) {
         if (value > maxScore) { maxScore = value; best = key; }
       }
@@ -43,7 +48,10 @@ export default function MinistryTest() {
   };
 
   const resetTest = () => {
-    setScores({ WISHING: 0, SOTONG: 0, SAI: 0, BETHEL: 0, SPRING: 0 });
+    setScores({
+      WISHING: 0, SAI: 0, HADEUNG: 0, HARANG: 0,
+      MASAEM: 0, SOTONG: 0, NAU: 0, YEPUM: 0, BETHEL: 0,
+    });
     setCurrentIdx(0);
     setResultId(null);
     setShowResult(false);
@@ -130,7 +138,7 @@ export default function MinistryTest() {
         </h1>
 
         <p className="text-[var(--color-text-muted)] text-base leading-7 mb-8">
-          10개의 일상 질문으로 나에게 딱 맞는 사역팀을 찾아드려요.
+          12개의 일상 질문으로 나에게 딱 맞는 사역팀을 찾아드려요.
         </p>
 
 
