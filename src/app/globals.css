@@ -1,0 +1,42 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import "tailwindcss";
+
+@theme inline {
+  /* ─── Design Tokens ─────────────────────────── */
+
+  /* Primary: Warm slate dark (not pure cold black) */
+  --color-primary:       #1e1e2e;
+  --color-primary-soft:  #2d2d44;
+
+  /* Secondary: Softer indigo-blue */
+  --color-secondary:     #4f6ef7;
+  --color-secondary-dim: rgba(79, 110, 247, 0.08);
+
+  /* Surface: Warm cream backgrounds */
+  --color-bg:            #f7f5f2;
+  --color-surface:       #ffffff;
+  --color-surface-hover: #fdfcfb;
+
+  /* Text */
+  --color-text-main:     #1e1e2e;
+  --color-text-muted:    #8b8ba8;
+
+  /* Border (very subtle, warm-tinted) */
+  --color-border:        #e8e5df;
+
+  /* Shadow */
+  --shadow-card: 0 2px 12px rgba(30, 30, 46, 0.07);
+  --shadow-card-hover: 0 6px 24px rgba(30, 30, 46, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
