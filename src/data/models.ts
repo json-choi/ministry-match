@@ -72,6 +72,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "HeartHandshake",
     color: "from-violet-500 to-purple-500",
     traits: ["따뜻한", "친화력이 좋은", "공감 능력이 뛰어난"],
+    image: "/spring.png"
   }
 ];
 
