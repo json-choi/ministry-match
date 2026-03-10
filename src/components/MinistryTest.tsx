@@ -129,10 +129,36 @@ export default function MinistryTest() {
           나의 사역<br />DNA 찾기
         </h1>
 
-        <p className="text-[var(--color-text-muted)] text-base leading-7 mb-10">
-          10개의 일상 질문으로<br />
-          나에게 딱 맞는 사역팀을 찾아드려요.
+        <p className="text-[var(--color-text-muted)] text-base leading-7 mb-8">
+          10개의 일상 질문으로 나에게 딱 맞는 사역팀을 찾아드려요.
         </p>
+
+        <div className="bg-white rounded-3xl p-6 sm:p-8 mb-10 text-left w-full mx-auto max-w-sm" style={{ boxShadow: "var(--shadow-card)" }}>
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-secondary)] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-secondary)]"></span>
+            </span>
+            <span className="text-xs font-bold text-[var(--color-secondary)] tracking-wider">BETA 오픈 팀 라인업</span>
+          </div>
+          
+          <div className="flex flex-col gap-3">
+            {MINISTRIES.map((m) => {
+              const Icon = IconMap[m.icon as keyof typeof IconMap];
+              return (
+                <div key={m.id} className="flex items-center gap-4 p-3 rounded-2xl bg-[var(--color-bg)] transition-colors hover:bg-[var(--color-secondary-dim)] border border-transparent hover:border-[var(--color-secondary)]">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm text-[var(--color-primary)]">
+                    <Icon size={18} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[var(--color-primary)]">{m.name}</h4>
+                    <p className="text-xs font-medium text-[var(--color-text-muted)]">{m.role}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         <button
           onClick={() => setStarted(true)}
