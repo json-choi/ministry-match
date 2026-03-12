@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MINISTRIES, QUESTIONS } from "@/data/models";
+import QrPlaceholderCard from "@/components/QrPlaceholderCard";
 import {
   Music, Video, BookOpen, MicVocal, HeartHandshake,
   Moon, Sprout, HandHeart, HandHelping,
-  ArrowRight, RefreshCcw, Sparkles
+  ArrowRight, RefreshCcw, Compass
 } from "lucide-react";
 
 type Scores = Record<string, number>;
@@ -96,7 +98,7 @@ export default function MinistryTest() {
             {m.description}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {m.traits.map((t, i) => (
               <span
                 key={i}
@@ -107,14 +109,29 @@ export default function MinistryTest() {
             ))}
           </div>
 
-          <button
-            onClick={resetTest}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-base transition-opacity hover:opacity-85"
-            style={{ backgroundColor: "var(--color-primary)" }}
-          >
-            <RefreshCcw size={16} />
-            다시 해보기
-          </button>
+          <div className="mb-8 text-left">
+            <QrPlaceholderCard />
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/ministries"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-base transition-opacity hover:opacity-85 text-white"
+              style={{ backgroundColor: "var(--color-secondary)" }}
+            >
+              <Compass size={18} />
+              다른 사역팀 구경하러 가기!
+            </Link>
+
+            <button
+              onClick={resetTest}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-base transition-opacity hover:opacity-85"
+              style={{ backgroundColor: "var(--color-primary)" }}
+            >
+              <RefreshCcw size={16} />
+              다시 해보기
+            </button>
+          </div>
         </div>
       </motion.div>
     );
@@ -200,25 +217,19 @@ export default function MinistryTest() {
             {currentQ.options.map((opt, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => handleAnswer(opt.scores)}
-                className="group w-full text-left p-5 sm:p-6 rounded-2xl transition-all duration-150"
+                className="group w-full text-left p-5 sm:p-6 rounded-2xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
                 style={{
                   backgroundColor: "var(--color-bg)",
                   border: "1.5px solid transparent",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--color-secondary)";
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-secondary-dim)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "transparent";
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-bg)";
+                  WebkitTapHighlightColor: "transparent",
                 }}
               >
                 <div className="flex items-start gap-4">
                   <div
                     className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full text-xs font-black mt-0.5 transition-colors"
-                    style={{ backgroundColor: "var(--color-border)", color: "var(--color-text-muted)" }}
+                    style={{ backgroundColor: "var(--color-border)", color: "var(--color-text-muted)", fontWeight: 900 }}
                   >
                     {i === 0 ? "A" : "B"}
                   </div>
