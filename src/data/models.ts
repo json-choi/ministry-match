@@ -156,17 +156,17 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
-  // Q2 — 사람을 대하는 방식 (마샘/하랑 vs 소통/사이)
+  // Q2 — 처음 온 사람을 대하는 방식 (마샘/하랑 vs 소통/사이)
   {
     id: 2,
-    text: "처음 만나는 사람과 한 공간에 있게 됐다. 나는 보통 어떻게 행동하는가?",
+    text: "처음 온 사람이 어색하게 서 있는 모습을 보면, 나는 보통 어떻게 행동하는가?",
     options: [
       {
-        text: "먼저 말을 걸거나 눈을 맞추며 편안한 분위기를 만들려 한다.",
+        text: "먼저 말을 걸고 편하게 느끼도록 분위기를 풀어준다.",
         scores: { MASAEM: 3, HARANG: 2, WISHING: 1 },
       },
       {
-        text: "상대방이 먼저 말을 걸기 전까지는 조용히 내 할 일에 집중한다.",
+        text: "직접 나서기보다 상황을 살피며 필요한 준비나 역할에 집중한다.",
         scores: { SOTONG: 3, SAI: 2, HADEUNG: 1 },
       },
     ],
@@ -220,17 +220,17 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
-  // Q6 — 글/콘텐츠 (사이 vs 하랑)
+  // Q6 — 공동체 이야기를 나누는 방식 (사이 vs 하랑)
   {
     id: 6,
-    text: "좋았던 경험을 주변에 나눌 때, 나는 주로 어떻게 하는가?",
+    text: "공동체 안에서 좋았던 일을 다른 사람들에게 전하고 싶을 때, 나는 주로 어떻게 하는가?",
     options: [
       {
-        text: "글이나 사진, 영상으로 기록하고 공유한다. 정리해서 남기는 것이 좋다.",
+        text: "글이나 사진, 영상으로 기록해 오래 남도록 정리하고 나눈다.",
         scores: { SAI: 3, SOTONG: 1, NAU: 1 },
       },
       {
-        text: "직접 함께 데려간다. 몸으로 경험하게 하는 것이 최고다.",
+        text: "직접 함께 참여하게 하거나 현장으로 데려가 몸으로 느끼게 한다.",
         scores: { HARANG: 3, MASAEM: 2, YEPUM: 1 },
       },
     ],
@@ -258,11 +258,11 @@ export const QUESTIONS: Question[] = [
     text: "어려움 속에 있는 친구를 돕고 싶을 때, 나는 어떤 방식으로 먼저 다가가는가?",
     options: [
       {
-        text: "구체적으로 뭐가 필요한지 물어보고, 실질적인 방법으로 해결을 돕는다.",
+        text: "구체적으로 뭐가 필요한지 묻고, 혼자 설 수 있도록 실질적인 방법을 함께 찾는다.",
         scores: { YEPUM: 3, HARANG: 2, SOTONG: 1 },
       },
       {
-        text: "일단 옆에 앉아 들어준다. 해결보다 공감이 먼저라고 생각한다.",
+        text: "일단 곁에 있어 주며 마음을 듣는다. 편히 기대도록 만드는 것이 먼저다.",
         scores: { MASAEM: 3, HADEUNG: 2, SAI: 1 },
       },
     ],
@@ -274,12 +274,12 @@ export const QUESTIONS: Question[] = [
     text: "나에게 영적으로 힘이 되는 시간은 언제인가?",
     options: [
       {
-        text: "조용히 혼자 혹은 소수와 함께 기도에 집중하는 시간",
-        scores: { HADEUNG: 3, NAU: 2, BETHEL: 1 },
+        text: "조용히 혼자 혹은 소수와 함께 깊이 기도하며 공동체를 위해 중보하는 시간",
+        scores: { HADEUNG: 3, NAU: 1, BETHEL: 1 },
       },
       {
-        text: "여러 사람과 함께 예배하거나 섬기면서 에너지를 얻는 시간",
-        scores: { WISHING: 2, HARANG: 2, MASAEM: 2 },
+        text: "정기적으로 함께 모여 예배하고 기도하며 공동체가 하나 되는 시간",
+        scores: { NAU: 3, WISHING: 2, HARANG: 1 },
       },
     ],
   },
@@ -290,11 +290,11 @@ export const QUESTIONS: Question[] = [
     text: "교회 밖 세상에 대해 나는 주로 어떤 방식으로 관심을 표현하는가?",
     options: [
       {
-        text: "직접 참여하거나 자원봉사하는 등 몸으로 움직이는 방식을 선호한다.",
+        text: "도움이 필요한 청년을 실제로 돕고, 자립할 수 있도록 곁에서 지속적으로 돕는 방식이 좋다.",
         scores: { YEPUM: 3, HARANG: 2, MASAEM: 1 },
       },
       {
-        text: "글을 쓰거나 이야기를 나누며 인식을 높이는 방식을 선호한다.",
+        text: "글이나 사진, 이야기로 공동체의 시선을 넓히고 공감을 이끄는 방식이 좋다.",
         scores: { SAI: 3, NAU: 1, HADEUNG: 1 },
       },
     ],
