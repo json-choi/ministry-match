@@ -8,7 +8,7 @@ import QrPlaceholderCard from "@/components/QrPlaceholderCard";
 import {
   Music, Video, BookOpen, MicVocal, HeartHandshake,
   Moon, Sprout, HandHeart, HandHelping,
-  ArrowRight, RefreshCcw, Compass
+  ArrowRight, RefreshCcw, Compass, Users
 } from "lucide-react";
 
 type Scores = Record<string, number>;
@@ -19,6 +19,7 @@ const IconMap = {
 } as const;
 
 export default function MinistryTest() {
+  const [playerName, setPlayerName] = useState("");
   const [started, setStarted] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [scores, setScores] = useState<Scores>({
@@ -27,6 +28,22 @@ export default function MinistryTest() {
   });
   const [showResult, setShowResult] = useState(false);
   const [resultId, setResultId] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  const saveResult = async (name: string, ministryId: string) => {
+    setSaving(true);
+    try {
+      await fetch("/api/results", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, ministryId }),
+      });
+    } catch {
+      // 저장 실패해도 결과는 보여줌
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const handleAnswer = (optionScores: Record<string, number | undefined>) => {
     const newScores = { ...scores };
@@ -46,6 +63,7 @@ export default function MinistryTest() {
       }
       setResultId(best);
       setShowResult(true);
+      saveResult(playerName, best);
     }
   };
 
@@ -58,6 +76,7 @@ export default function MinistryTest() {
     setResultId(null);
     setShowResult(false);
     setStarted(false);
+    setPlayerName("");
   };
 
   /* ── RESULT ── */
@@ -83,8 +102,8 @@ export default function MinistryTest() {
             </div>
           )}
 
-          <p className="text-xs font-bold tracking-widest text-[var(--color-text-muted)] uppercase mb-3">
-            당신에게 가장 잘 어울리는 팀은
+          <p className="text-sm font-bold text-[var(--color-text-muted)] mb-1">
+            {playerName}님에게 가장 잘 어울리는 팀은
           </p>
 
           <h2 className="text-5xl font-black text-[var(--color-primary)] tracking-tight mb-2">
@@ -109,6 +128,10 @@ export default function MinistryTest() {
             ))}
           </div>
 
+          {saving && (
+            <p className="text-xs text-[var(--color-text-muted)] mb-4">결과 저장 중...</p>
+          )}
+
           <div className="mb-8 text-left">
             <QrPlaceholderCard />
           </div>
@@ -121,6 +144,14 @@ export default function MinistryTest() {
             >
               <Compass size={18} />
               다른 사역팀 구경하러 가기!
+            </Link>
+
+            <Link
+              href="/group"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-base transition-opacity hover:opacity-85 border border-[var(--color-border)] bg-white text-[var(--color-primary)]"
+            >
+              <Users size={18} />
+              단체 결과 보기
             </Link>
 
             <button
@@ -158,11 +189,19 @@ export default function MinistryTest() {
           12개의 일상 질문으로 나에게 딱 맞는 사역팀을 찾아드려요.
         </p>
 
-
+        <input
+          type="text"
+          placeholder="이름을 입력해주세요"
+          value={playerName}
+          onChange={(e) => setPlayerName(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter" && playerName.trim()) setStarted(true); }}
+          className="w-full rounded-2xl border border-[var(--color-border)] bg-white px-5 py-4 text-center text-lg font-medium text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)] mb-4"
+        />
 
         <button
           onClick={() => setStarted(true)}
-          className="w-full flex items-center justify-center gap-2 py-4 px-8 rounded-full text-white font-bold text-lg transition-opacity hover:opacity-85"
+          disabled={!playerName.trim()}
+          className="w-full flex items-center justify-center gap-2 py-4 px-8 rounded-full text-white font-bold text-lg transition-opacity hover:opacity-85 disabled:opacity-40 disabled:cursor-not-allowed"
           style={{ backgroundColor: "var(--color-secondary)" }}
         >
           검사 시작 <ArrowRight size={20} strokeWidth={2.5} />
