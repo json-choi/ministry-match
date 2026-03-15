@@ -231,7 +231,7 @@ export const QUESTIONS: Question[] = [
       },
       {
         text: "직접 함께 참여하게 하거나 현장으로 데려가 몸으로 느끼게 한다.",
-        scores: { HARANG: 3, MASAEM: 2, YEPUM: 1 },
+        scores: { HARANG: 2, MASAEM: 2, YEPUM: 2 },
       },
     ],
   },
@@ -291,7 +291,7 @@ export const QUESTIONS: Question[] = [
     options: [
       {
         text: "도움이 필요한 청년을 실제로 돕고, 자립할 수 있도록 곁에서 지속적으로 돕는 방식이 좋다.",
-        scores: { YEPUM: 3, HARANG: 2, MASAEM: 1 },
+        scores: { YEPUM: 3, HARANG: 1, MASAEM: 1, BETHEL: 1 },
       },
       {
         text: "글이나 사진, 이야기로 공동체의 시선을 넓히고 공감을 이끄는 방식이 좋다.",
@@ -307,7 +307,7 @@ export const QUESTIONS: Question[] = [
     options: [
       {
         text: "결과물의 완성도 — 세세한 부분까지 제대로 갖춰져야 한다.",
-        scores: { SOTONG: 3, BETHEL: 2, SAI: 1 },
+        scores: { SOTONG: 3, BETHEL: 3, SAI: 1 },
       },
       {
         text: "함께하는 과정 — 모든 사람이 참여하고 즐겁게 만들어나가는 것이 중요하다.",
