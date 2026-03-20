@@ -43,7 +43,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "Music",
     color: "from-pink-500 to-rose-500",
     traits: ["예배의 문을 활짝 여는 열정적인 예배자", "에너지 넘치는", "음악을 사랑하는"],
-    image: "/wishing.png",
+    image: "/wishing.webp",
   },
   {
     id: "SAI",
@@ -54,7 +54,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "BookOpen",
     color: "from-emerald-500 to-teal-500",
     traits: ["젊은이와 젊은이 사이를 잇는 아름다운 다리", "관찰력이 뛰어난", "글·디자인을 좋아하는"],
-    image: "/sai.png",
+    image: "/sai.webp",
   },
   {
     id: "HADEUNG",
@@ -65,6 +65,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "HandHeart",
     color: "from-violet-500 to-purple-600",
     traits: ["무릎으로 승리하는 기도의 용사", "꾸준한", "영적 감수성이 높은"],
+    image: "/HADEUNG.webp",
   },
   {
     id: "HARANG",
@@ -75,6 +76,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "HandHelping",
     color: "from-orange-400 to-amber-500",
     traits: ["필요한 곳이라면 어디든지 달려가는 섬김의 달인", "따뜻한", "배려심이 깊은"],
+    image: "/HARANG.webp",
   },
   {
     id: "MASAEM",
@@ -85,7 +87,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "HeartHandshake",
     color: "from-sky-400 to-cyan-500",
     traits: ["마음 문을 여는 따뜻한 미소와 환대", "공감 능력 높은", "세심한"],
-    image: "/spring.png",
+    image: "/spring.webp",
   },
   {
     id: "SOTONG",
@@ -96,6 +98,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "Video",
     color: "from-blue-500 to-indigo-500",
     traits: ["보이지 않는 곳에서 예배를 완성하는 섬김의 손길", "책임감 있는", "기술적 감각이 있는"],
+    image: "/SOTONG.webp",
   },
   {
     id: "NAU",
@@ -106,6 +109,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "Moon",
     color: "from-indigo-500 to-slate-600",
     traits: ["평일에도 젊은이 공동체를 하나되게 만드는 금요기도팀", "규칙적인", "예배를 사랑하는"],
+    image: "/NAU.webp",
   },
   {
     id: "YEPUM",
@@ -116,6 +120,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "Sprout",
     color: "from-green-500 to-emerald-600",
     traits: ["자립을 준비하는 청년들의 든든한 동반자", "실용적인", "연대 정신이 있는"],
+    image: "/YEPUM.webp",
   },
   {
     id: "BETHEL",
@@ -126,7 +131,7 @@ export const MINISTRIES: Ministry[] = [
     icon: "MicVocal",
     color: "from-amber-400 to-orange-500",
     traits: ["아름다운 하모니를 만들어가는 하늘의 찬양대", "성실한", "전통과 깊이를 사랑하는"],
-    image: "/bethel.png",
+    image: "/bethel.webp",
   },
 ];
 

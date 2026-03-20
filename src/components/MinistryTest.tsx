@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MINISTRIES, QUESTIONS } from "@/data/models";
-import QrPlaceholderCard from "@/components/QrPlaceholderCard";
 import {
   Music, Video, BookOpen, MicVocal, HeartHandshake,
   Moon, Sprout, HandHeart, HandHelping,
@@ -132,11 +131,7 @@ export default function MinistryTest() {
             <p className="text-xs text-[var(--color-text-muted)] mb-4">결과 저장 중...</p>
           )}
 
-          <div className="mb-8 text-left">
-            <QrPlaceholderCard />
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+<div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/ministries"
               className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-base transition-opacity hover:opacity-85 text-white"
