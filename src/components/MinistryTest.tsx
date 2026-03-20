@@ -173,7 +173,7 @@ export default function MinistryTest() {
         className="text-center w-full max-w-md mx-auto py-12"
       >
         <div className="w-full max-w-xs sm:max-w-sm mx-auto mb-10 overflow-hidden shadow-sm rounded-3xl border-4 border-white" style={{ boxShadow: "var(--shadow-card)" }}>
-          <img src="/landing.png" alt="나의 사역 DNA" className="w-full h-auto object-cover" />
+          <img src="/landing.webp" alt="나의 사역 DNA" className="w-full h-auto object-cover" />
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-[var(--color-primary)] tracking-tight mb-5 leading-tight">

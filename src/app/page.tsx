@@ -1,5 +1,4 @@
 import MinistryTest from "@/components/MinistryTest";
-import DevToolLineup from "@/components/DevToolLineup";
 
 export default function Home() {
   return (
@@ -7,7 +6,6 @@ export default function Home() {
       <div className="flex-1 w-full max-w-3xl mx-auto flex flex-col justify-center py-8">
         <MinistryTest />
       </div>
-      <DevToolLineup />
     </main>
   );
 }

@@ -34,3 +34,9 @@ export async function POST(req: Request) {
 
   return NextResponse.json(entry, { status: 201 });
 }
+
+// DELETE - 전체 결과 초기화
+export async function DELETE() {
+  await redis.del(RESULTS_KEY);
+  return NextResponse.json({ ok: true });
+}

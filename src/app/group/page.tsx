@@ -7,7 +7,7 @@ import { MINISTRIES } from "@/data/models";
 import {
   Music, Video, BookOpen, MicVocal, HeartHandshake,
   Moon, Sprout, HandHeart, HandHelping,
-  ArrowLeft, RefreshCw, Users,
+  ArrowLeft, RefreshCw, Users, Trash2,
 } from "lucide-react";
 
 const IconMap = {
@@ -70,6 +70,17 @@ export default function GroupPage() {
           </div>
 
           <div className="flex shrink-0 gap-2">
+            <button
+              onClick={async () => {
+                if (!confirm("모든 결과를 삭제할까요?")) return;
+                await fetch("/api/results", { method: "DELETE" });
+                setResults([]);
+              }}
+              className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white px-4 py-3 text-sm font-bold text-red-500 transition hover:bg-red-50"
+            >
+              <Trash2 size={16} />
+              리셋
+            </button>
             <button
               onClick={() => { setLoading(true); fetchResults(); }}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-bold text-[var(--color-primary)] transition hover:bg-[var(--color-bg)]"
